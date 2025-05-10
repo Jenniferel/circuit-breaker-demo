@@ -1,0 +1,6 @@
+## Instalación y Ejecución
+
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/Jenniferel/circuit-breaker-demo.git
+   cd circuit-breaker-demo
