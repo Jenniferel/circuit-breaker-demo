@@ -1,7 +1,5 @@
 # Circuit Breaker Demo
 
-![Diagrama Circuit Breaker](https://miro.medium.com/max/1400/1*5sJSP6yJkZk6LRWyb5zqOg.png)
-
 Demo interactivo que muestra el patrón Circuit Breaker implementado entre dos microservicios usando Docker.
 
 ## Estructura del Proyecto
