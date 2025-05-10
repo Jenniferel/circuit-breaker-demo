@@ -1,0 +1,72 @@
+Características del Demo
+✅ Interfaz web interactiva
+✅ Cuatro modos de fallo configurables
+✅ Visualización del estado del Circuit Breaker
+✅ Health checks integrados
+✅ Configuración dinámica sin reiniciar
+
+Uso
+Service A (Cliente):
+
+Botón "Call Service B" - Prueba la conexión
+
+Botón "Toggle Circuit" - Alterna el umbral de fallos
+
+Service B (Servicio simulado):
+
+Normal Mode: Funcionamiento correcto
+
+Slow Mode: +2 segundos de latencia
+
+Error Mode: 50% de probabilidad de fallo
+
+Down Mode: Servicio no disponible
+
+Ejemplos de Comandos
+Probar manualmente el Circuit Breaker:
+
+bash
+# PowerShell
+1..10 | % { curl http://localhost:5000/call-b; sleep 1 }
+
+# Bash
+for i in {1..10}; do curl http://localhost:5000/call-b; sleep 1; done
+Configuración
+Puedes modificar los parámetros del Circuit Breaker en:
+service-a/app.py - Busca CB_CONFIG
+
+python
+CB_CONFIG = {
+    'failure_threshold': 3,  # Fallos antes de abrir el circuito
+    'recovery_timeout': 10,  # Segundos en estado abierto
+    'name': 'ServiceB_Circuit'
+}
+Licencia
+MIT License - Libre para uso y modificación
+
+
+## Pasos Adicionales Opcionales
+
+1. **Crear un diagrama de arquitectura** (puedes usar https://app.diagrams.net/)
+2. **Agregar badges** al README (build status, license, etc.)
+3. **Configurar GitHub Actions** para CI/CD
+4. **Crear releases** con versiones estables
+
+## Recomendaciones
+
+1. Verifica que todos los archivos estén incluidos antes del push:
+   ```bash
+   git status
+Para actualizar el repositorio después de cambios:
+
+bash
+git add .
+git commit -m "Descripción de los cambios"
+git push
+Si necesitas eliminar archivos sensibles accidentalmente commitados:
+
+bash
+git rm --cached archivo_sensible
+echo "archivo_sensible" >> .gitignore
+git commit -am "Remove sensitive file"
+git push
