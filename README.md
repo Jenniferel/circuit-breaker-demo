@@ -23,3 +23,11 @@ circuit-breaker-demo/
 │ └── requirements.txt # Dependencias Python
 
 └── docker-compose.yml # Orquestación de contenedores
+
+
+Construir y ejecutar los servicios:
+docker-compose up --build
+
+Acceder a la interfaz web:
+http://localhost:5000
+
